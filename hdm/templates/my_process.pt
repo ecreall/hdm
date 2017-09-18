@@ -1,0 +1,44 @@
+<div metal:use-macro="request.sdiapi.main_template">
+
+  <metal:head-more fill-slot="head-more">
+
+    <style type="text/css">
+      .blockquote {
+          color: #a5a4a4;
+          font-style: italic;
+          margin: 30px;
+          padding: 30px;
+      }
+      .blockquote:first-letter {
+          float: left;
+          margin: -9px 6px 0 0;
+          font-size: 35px;
+     }
+    </style>
+
+  </metal:head-more>
+
+  <div metal:fill-slot="main">
+      <dl style="margin-top: 1em;">
+         <dt>The executed action:</dt>
+         <dd>
+            ${action_title}
+         </dd>
+         <dt>The action result (The message):</dt>
+         <dd>
+            ${message}
+         </dd>
+         <dt>The executed process instance id:</dt>
+         <dd tal:condition="process_id" style="color: red">
+            ${process_id}
+         </dd>
+         <dd tal:condition="not process_id" style="color: red">
+            End event: Process instance removed (The process definition is volatile)
+         </dd>
+       </dl>
+       <div style="margin-top: 1em;">
+        <a tal:condition="process_id" class="btn btn-primary" href="${request.application_url}/my_process">Next action</a>
+        <a tal:condition="not process_id" class="btn btn-primary" href="${request.application_url}/my_process">Start process</a>
+      </div>
+  </div>
+</div>

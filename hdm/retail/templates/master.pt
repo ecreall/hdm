@@ -7,7 +7,5 @@
     <metal:title metal:define-slot="head-title"/>
   </head>
   <body>
-    <metal:title metal:define-slot="body-title">TITLE</metal:title>
-    <metal:content metal:define-slot="body-content">CONTENT</metal:content>
   </body>
 </html>
