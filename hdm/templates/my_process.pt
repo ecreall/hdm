@@ -14,6 +14,17 @@
           margin: -9px 6px 0 0;
           font-size: 35px;
      }
+     .process{
+       margin-top: 100px !important;
+        text-align: center;
+     }
+     .process>span{
+         font-size: 50px
+     }
+     .process>.btn{
+         font-size: 60px;
+         margin-bottom: 35px;
+     }
     </style>
 
   </metal:head-more>
@@ -28,17 +39,22 @@
          <dd>
             ${message}
          </dd>
-         <dt>The executed process instance id:</dt>
+         <dt>Next action:</dt>
          <dd tal:condition="process_id" style="color: red">
-            ${process_id}
+            Bye!
          </dd>
          <dd tal:condition="not process_id" style="color: red">
             End event: Process instance removed (The process definition is volatile)
          </dd>
        </dl>
-       <div style="margin-top: 1em;">
-        <a tal:condition="process_id" class="btn btn-primary" href="${request.application_url}/my_process">Next action</a>
-        <a tal:condition="not process_id" class="btn btn-primary" href="${request.application_url}/my_process">Start process</a>
+       <div class="process" style="margin-top: 1em;">
+         <span class="glyphicon glyphicon-play-circle"></span>
+         <span class="glyphicon glyphicon-arrow-right"></span>
+        <a class="btn ${process_id and 'disabled btn-default' or 'btn-primary'}" href="${request.application_url}/my_process">Hello!</a>
+        <span class="glyphicon glyphicon-arrow-right"></span>
+        <a class="btn ${not process_id and 'disabled btn-default' or 'btn-primary'}" href="${request.application_url}/my_process">Bye!</a>
+        <span class="glyphicon glyphicon-arrow-right"></span>
+        <span class="glyphicon glyphicon-off"></span>
       </div>
   </div>
 </div>
