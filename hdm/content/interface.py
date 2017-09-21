@@ -11,3 +11,7 @@ from dace.interfaces import (
 
 class IRoot(IEntity, IApplication):
     pass
+
+
+class IVacation(IEntity):
+    pass
