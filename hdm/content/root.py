@@ -27,7 +27,7 @@ class Root(Application):
     """Nova-Ideo class (Root)"""
 
     name = renamer()
-    vations = CompositeMultipleProperty('vations')
+    vacations = CompositeMultipleProperty('vacations')
 
     def __init__(self, **kwargs):
         super(Root, self).__init__(**kwargs)
