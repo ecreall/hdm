@@ -14,3 +14,7 @@ parts/
 var/
 downloads/
 src/
+
+# PyCharm project files
+.idea/
+out
