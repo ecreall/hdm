@@ -28,7 +28,6 @@ To run in development mode::
     cd hdm
     virtualenv -p python3 venv
     source venv/bin/activate
-    mkdir -p var/blobs
     pip install -r requirements.txt
     pserve development.ini
 
