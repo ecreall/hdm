@@ -1,6 +1,7 @@
 from persistent.list import PersistentList
 
-from dace.instance.activity import ElementaryAction
+from dace.instance.activity import ElementaryAction, ActionType
+from dace.model.principal.util import has_role
 
 from hdm.content.interface import IRoot, IVacation
 from hdm.content.vacation import Vacation
@@ -50,11 +51,17 @@ class Refuse(ElementaryAction):
         return {'message': 'vacation refused'}
 
 
+def alert_roles_validation(process, context):
+    return has_role(role=('System',))
+
+
 class Alert(ElementaryAction):
     context = IVacation
     processs_relation_id = 'vacation'
     relation_validation = process_relation_validation
+    roles_validation = alert_roles_validation
     view_name = 'alert'
+    actionType = ActionType.system
 
     def start(self, context, request, appstruct, **kw):
         context.state = PersistentList(['alert'])
