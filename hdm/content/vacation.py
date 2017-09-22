@@ -2,6 +2,9 @@ import colander
 from dace.model.entity import Entity
 
 from deform.widget import TextInputWidget, TextAreaWidget
+from zope.interface import implementer
+
+from hdm.content.interface import IVacation
 
 
 class VacationSchema(colander.Schema):
@@ -26,10 +29,10 @@ class VacationSchema(colander.Schema):
     )
 
 
+@implementer(IVacation)
 class Vacation(Entity):
-    def __init__(self, start=None, finish=None, employee=None, reason=None):
-        super().__init__(start=start, finish=finish, employee=employee, reason=reason)
-        self.start = start
-        self.finish = finish
-        self.employee = employee
-        self.reason = reason
+    """Vacation class"""
+
+    def __init__(self, **kwargs):
+        super(Vacation, self).__init__(**kwargs)
+        self.set_data(kwargs)
