@@ -1,0 +1,16 @@
+<div metal:use-macro="request.sdiapi.main_template">
+
+    <metal:head-more fill-slot="head-more">
+    </metal:head-more>
+
+    <div metal:fill-slot="main">
+        <div tal:repeat="vacation vacations">
+            <div style="border: solid 1px gray; margin: 5px; padding: 1em">
+                <h4>${vacation.employee}</h4>
+                <div><span style="font-weight: bold;">Début:</span> ${vacation.start.strftime('%m/%d/%Y')}</div>
+                <div><span style="font-weight: bold;">Fin:</span> ${vacation.finish.strftime('%m/%d/%Y')}</div>
+                <div><span style="font-weight: bold;">Raison:</span> ${vacation.reason}</div>
+            </div>
+        </div>
+    </div>
+</div>
