@@ -28,7 +28,8 @@ def refuse_condition(process):
 
 
 def time_date(process):
-    vacation = process.execution_context.created_entity('vacation')
+    # Recuperate the vacation instance related to this process
+    # vacation = process.execution_context.created_entity('vacation')
     # date = vacation.finish - datetime.timedelta(days=1)
     # Test
     date = datetime.timedelta(minutes=1) +\

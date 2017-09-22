@@ -2,25 +2,32 @@
 
     <metal:head-more fill-slot="head-more">
         <style type="text/css">
-
+            .container{
+                padding: 1em;
+            }
+            
             .vacation-list {
                 display: flex;
-                padding: 1em;
                 flex-wrap: wrap;
+                margin-top: 1em;
             }
 
             .vacation-card {
                 border: solid 1px #d2d8db;
-                margin: 0 0.5em 1em 0.5em;
+                margin: 0 1em 1em 0;
                 padding: 1em;
                 flex-basis: 250px;
+            }
+            
+            .vacation-card:hover {
+               box-shadow: 0px 0px 15px -5px grey;
             }
 
             .vacation-card h4 {
                 margin-top: 0;
             }
 
-            .bold {
+            .card-title {
                 color: #1b6d85;
                 font-weight: bold;
             }
@@ -32,29 +39,29 @@
         </style>
     </metal:head-more>
 
-    <div metal:fill-slot="main">
+    <div metal:fill-slot="main" class="container">
         <a class="btn btn-primary" href="${request.resource_url(request.root, 'vacation_request')}">Request</a>
         <div class="vacation-list">
           <div class="vacation-card" tal:repeat="vacation vacations">
             <h4>
-                <span class="bold">Demandeur:</span>
+                <span class="card-title">Demandeur:</span>
                     ${vacation.employee}
             </h4>
             <div>
-                <span class="bold">Début:</span>
+                <span class="card-title">Début:</span>
                     ${vacation.start.strftime('%m/%d/%Y')}
             </div>
             <div>
-                <span class="bold">Fin:</span>
+                <span class="card-title">Fin:</span>
                     ${vacation.finish.strftime('%m/%d/%Y')}
             </div>
             <div>
-                <span class="bold">Raison:</span>
+                <span class="card-title">Raison:</span>
                     ${vacation.reason}
             </div>
             <div tal:condition="vacation.state">
-                <span class="bold">State:</span>
-                    ${vacation.state[0]}
+                <span class="card-title">State:</span>
+                <span class="badge">${vacation.state[0]}</span>
             </div>
             <div class="vacation-footer">
                 <div class="btn-group" role="group">

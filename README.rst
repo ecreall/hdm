@@ -32,5 +32,3 @@ To run in development mode::
     pserve development.ini
 
 The application is on http://127.0.0.1:6543
-
-To see the 'hello world' view: http://127.0.0.1:6543/my_process
