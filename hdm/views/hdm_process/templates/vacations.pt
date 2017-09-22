@@ -1,15 +1,51 @@
 <div metal:use-macro="request.sdiapi.main_template">
 
     <metal:head-more fill-slot="head-more">
+        <style type="text/css">
+
+            .vacation-list {
+                display: flex;
+                padding: 1em;
+                flex-wrap: wrap;
+            }
+
+            .vacation-card {
+                border: solid 1px #d2d8db;
+                margin: 0 0.5em 1em 0.5em;
+                padding: 1em;
+                flex-basis: 250px;
+            }
+
+            .vacation-card h4 {
+                margin-top: 0;
+            }
+
+            .bold {
+                color: #1b6d85;
+                font-weight: bold;
+            }
+
+        </style>
     </metal:head-more>
 
-    <div metal:fill-slot="main">
-        <div tal:repeat="vacation vacations">
-            <div style="border: solid 1px gray; margin: 5px; padding: 1em">
-                <h4>${vacation.employee}</h4>
-                <div><span style="font-weight: bold;">Début:</span> ${vacation.start.strftime('%m/%d/%Y')}</div>
-                <div><span style="font-weight: bold;">Fin:</span> ${vacation.finish.strftime('%m/%d/%Y')}</div>
-                <div><span style="font-weight: bold;">Raison:</span> ${vacation.reason}</div>
+
+    <div class="vacation-list" metal:fill-slot="main">
+        <div class="vacation-card" tal:repeat="vacation vacations">
+            <h4>
+                <span class="bold">Demandeur:</span>
+                    ${vacation.employee}
+            </h4>
+            <div>
+                <span class="bold">Début:</span>
+                    ${vacation.start.strftime('%m/%d/%Y')}
+            </div>
+            <div>
+                <span class="bold">Fin:</span>
+                    ${vacation.finish.strftime('%m/%d/%Y')}
+            </div>
+            <div>
+                <span class="bold">Raison:</span>
+                    ${vacation.reason}
             </div>
         </div>
     </div>
