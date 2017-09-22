@@ -24,13 +24,18 @@
                 color: #1b6d85;
                 font-weight: bold;
             }
+            .vacation-footer{
+                text-align: center;
+                margin-top: 10px;
+            }
 
         </style>
     </metal:head-more>
 
-
-    <div class="vacation-list" metal:fill-slot="main">
-        <div class="vacation-card" tal:repeat="vacation vacations">
+    <div metal:fill-slot="main">
+        <a class="btn btn-primary" href="${request.resource_url(request.root, 'vacation_request')}">Request</a>
+        <div class="vacation-list">
+          <div class="vacation-card" tal:repeat="vacation vacations">
             <h4>
                 <span class="bold">Demandeur:</span>
                     ${vacation.employee}
@@ -47,6 +52,18 @@
                 <span class="bold">Raison:</span>
                     ${vacation.reason}
             </div>
+            <div tal:condition="vacation.state">
+                <span class="bold">State:</span>
+                    ${vacation.state[0]}
+            </div>
+            <div class="vacation-footer">
+                <div class="btn-group" role="group">
+                  <a tal:repeat="action vacation.actions" type="button" class="btn btn-primary btn-sm" href="${request.resource_url(vacation, action.action.view_name)}">${action.title}</a>
+                </div>
+            </div>
+
+         </div>
         </div>
     </div>
 </div>
+
