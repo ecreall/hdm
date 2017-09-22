@@ -1,0 +1,8 @@
+<div metal:use-macro="request.sdiapi.main_template">
+  <div metal:fill-slot="main">
+      <h1>HDM a DaCE example</h1>
+      <div style="margin-top: 1em;">
+        <a class="btn btn-primary" href="${request.application_url}/pending_vacation_requests">Vacations</a>
+      </div>
+  </div>
+</div>
