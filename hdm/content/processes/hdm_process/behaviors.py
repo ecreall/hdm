@@ -48,3 +48,14 @@ class Refuse(ElementaryAction):
     def start(self, context, request, appstruct, **kw):
         context.state = PersistentList(['refused'])
         return {'message': 'vacation refused'}
+
+
+class Alert(ElementaryAction):
+    context = IVacation
+    processs_relation_id = 'vacation'
+    relation_validation = process_relation_validation
+    view_name = 'alert'
+
+    def start(self, context, request, appstruct, **kw):
+        context.state = PersistentList(['alert'])
+        return {'message': 'alert'}
