@@ -3,18 +3,12 @@
 *.so
 *.swp
 *.egg-info
-.installed.cfg
-.mr.developer.cfg
 .project
 .pydevproject
 .settings/
-bin/
-develop-eggs/
-parts/
+venv/
 var/*
 !var/.gitkeep
-downloads/
-src/
 
 # PyCharm project files
 .idea/
