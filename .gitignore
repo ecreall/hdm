@@ -11,7 +11,8 @@
 bin/
 develop-eggs/
 parts/
-var/
+var/*
+!var/.gitkeep
 downloads/
 src/
 
