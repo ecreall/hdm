@@ -13,7 +13,8 @@ requires = [
     'substanced',
     'pyramid_tm',
     'ecreall_dace',
-    'mock'
+    'mock',
+    'graphene'
     ]
 
 setup(name='hdm',
