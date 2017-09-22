@@ -31,4 +31,4 @@ class AddDocumentView(FormView):
         if process_actions:
             action_to_execute = process_actions[0]
             action_to_execute.execute(self.request.root, self.request, appstruct)
-        return HTTPFound(self.request.resource_url(self.context, 'pendent_vacation_requests'))
+        return HTTPFound(self.request.resource_url(self.context, 'pending_vacation_requests'))
