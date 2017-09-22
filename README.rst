@@ -24,7 +24,7 @@ To run in development mode::
     sudo apt-get install python-virtualenv python3 python3-dev libxml2-dev libxslt1-dev \
       libjpeg-dev zlib1g-dev libfreetype6-dev libtiff5-dev libzmq3-dev \
       libyaml-dev git  # this is working on debian jessie and ubuntu xenial
-    git clone git@github.com:ecreall/hdm.git
+    git clone https://github.com/ecreall/hdm.git
     cd hdm
     virtualenv -p python3 venv
     source venv/bin/activate
