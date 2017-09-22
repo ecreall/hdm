@@ -31,7 +31,7 @@ def process_relation_validation(process, context):
 
 class Accept(ElementaryAction):
     context = IVacation
-    processs_relation_id = 'vacation'
+    process_relation_id = 'vacation'
     relation_validation = process_relation_validation
     view_name = 'accept'
 
@@ -42,7 +42,7 @@ class Accept(ElementaryAction):
 
 class Refuse(ElementaryAction):
     context = IVacation
-    processs_relation_id = 'vacation'
+    process_relation_id = 'vacation'
     relation_validation = process_relation_validation
     view_name = 'refuse'
 
@@ -57,7 +57,7 @@ def alert_roles_validation(process, context):
 
 class Alert(ElementaryAction):
     context = IVacation
-    processs_relation_id = 'vacation'
+    process_relation_id = 'vacation'
     relation_validation = process_relation_validation
     roles_validation = alert_roles_validation
     view_name = 'alert'
