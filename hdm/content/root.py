@@ -24,7 +24,8 @@ from .interface import IRoot
     )
 @implementer(IRoot)
 class Root(Application):
-    """Nova-Ideo class (Root)"""
+
+    """Root for the HDM app."""
 
     name = renamer()
     vacations = CompositeMultipleProperty('vacations')
