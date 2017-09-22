@@ -13,11 +13,11 @@ from hdm.content.vacation import VacationSchema
     name='vacation_request',
     renderer='substanced.sdi:templates/form.pt',
 )
-class AddDocumentView(FormView):
+class RequestVacationView(FormView):
     """
     A form view to submit vacation requests
     """
-    title = 'Add Document'
+    title = 'Request vacation'
     schema = VacationSchema()
     buttons = ('submit',)
 
