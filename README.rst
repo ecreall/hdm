@@ -37,4 +37,4 @@ The application is on http://127.0.0.1:6543
 Process
 -------
 
-![alt-process](https://raw.githubusercontent.com/ecreall/hdm/master/hdm%20diagram.png)
+.. figure:: https://raw.githubusercontent.com/ecreall/hdm/master/hdm%20diagram.png
