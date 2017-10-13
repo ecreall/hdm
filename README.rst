@@ -33,6 +33,14 @@ To run in development mode::
 
 The application is on http://127.0.0.1:6543
 
+Libraries that this application uses
+------------------------------------
+
+- dace: http://dace.readthedocs.io/en/latest/
+- colander, for the form schema: https://docs.pylonsproject.org/projects/colander/en/latest/
+- deform, to generate a form based on a colander schema: http://deformdemo.repoze.org/
+- SubstanceD forms: https://docs.pylonsproject.org/projects/substanced/en/latest/forms.html
+
 
 Process
 -------
